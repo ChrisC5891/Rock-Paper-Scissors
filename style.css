@@ -9,8 +9,28 @@ h1 {
 
 }
 
-h1{
+
+.container{
     display: flex;
-    background-color: red;
-    
+    background-color: black;
+}
+
+button{
+    display: inline;
+    width:600px;
+    height: 500px;
+    background-color: aqua;
+    margin: 10px;
+}
+
+.A{
+    background-color: rgb(151, 53, 53);
+}
+
+.B{
+    background-color: rgb(167, 51, 175);
+}
+
+.C{
+    background-color: rgb(60, 184, 38);
 }

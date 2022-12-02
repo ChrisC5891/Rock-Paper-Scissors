@@ -89,19 +89,26 @@ let roundWinner = ''
 
         const body = document.querySelector('body')    
         const container = document.getElementsByClassName('container');    
-            body.append(container);
-    
+            
+    ///////////////////////   UI    ////////////////////////////////////////////////
+        
         const buttons = document.getElementsByTagName('button'); 
-                buttons[0].addEventListener ('click', function(){
-                buttons[0].style.backgroundColor = 'red';
-                console.log('button clicked');
+                const rockBtn = buttons[0]
+                    rockBtn.addEventListener ('click', function(){
+                    console.log('button clicked');
+            });
+                const paperBtn = buttons[1]
+                    paperBtn.addEventListener ('click', function(){
+                    console.log(' 2nd button clicked');
             });
 
-            buttons[1].addEventListener ('click', function(){
-                buttons[1].style.backgroundColor = 'blue';
-                console.log(' 2nd button clicked');
+                const scissorsBtn = buttons[2]
+                    scissorsBtn.addEventListener ('click', function(){
+                    console.log(' 2nd button clicked');
             });
 
+
+            
             
             
             
