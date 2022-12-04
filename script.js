@@ -24,11 +24,10 @@ let playerScore = 0;
 let computerScore = 0;
 let roundWinner = ''
 
-
-    function playRound(playerSelection, computerSelection){
-        
-
     
+    function playRound(playerSelection, computerSelection){
+
+
     if(
         (playerSelection === 'rock' && computerSelection ===  'scissors')||
         (playerSelection === 'paper' && computerSelection === 'rock')||
@@ -67,17 +66,16 @@ let roundWinner = ''
     
 }  
 
-    
 
-//          for(let i =0; i < 5; i++){
-//let playerSelection =  prompt ('choose rock, paper or scissors');
-//playerSelection = playerSelection.toLowerCase();
-//const computerChoice = getComputerChoice();
-//console.log(playRound(playerSelection, computerChoice));
-//console.log("Your score = " + playerScore);
-//console.log("Computer's score = " + computerScore);
-//
-//          }
+
+        for(let i =0; i < 5; i++){
+playerSelection = prompt ('choose rock, paper or scissors');  ///////    input tied to this prompt   //////////
+playerSelection = playerSelection.toLowerCase();
+const computerChoice = getComputerChoice();
+console.log(playRound(playerSelection, computerChoice));
+console.log("Your score = " + playerScore);
+console.log("Computer's score = " + computerScore)
+}
           
         if(playerScore > computerScore){
             alert(`You have defeated the machines! ${playerScore} - ${computerScore}`)
@@ -91,31 +89,40 @@ let roundWinner = ''
         const container = document.getElementsByClassName('container');    
             
     ///////////////////////   UI    ////////////////////////////////////////////////
-        
+
         const buttons = document.getElementsByTagName('button'); 
                 const rockBtn = buttons[0]
                     rockBtn.addEventListener ('click', function(){
-                    console.log('button clicked');
+                        
+                    console.log('rock button clicked');
             });
                 const paperBtn = buttons[1]
                     paperBtn.addEventListener ('click', function(){
-                    console.log(' 2nd button clicked');
+                    console.log(' paper button clicked');
             });
 
                 const scissorsBtn = buttons[2]
                     scissorsBtn.addEventListener ('click', function(){
-                    console.log(' 2nd button clicked');
+                    console.log(' scissors button clicked');
             });
 
+        //    const rockSelection = 'rock';
+        //    const paperSelection = 'paper';
+        //    const scissorsSelection = 'scissors'
 
+             
             
             
             
             
-
-
-        const btnB = document.getElementsByClassName('B'); 
-        const btnC = document.getElementsByClassName('C');    
+           
+        //const rockBtn = document.getElementsByClassName('rock'); 
+        //rockBtn.addEventListener ('click', function(){
+        //                console.log('button clicked');
+        //})
+        //
+        //const paperBtn = document.getElementsByClassName('paper'); 
+        //const scissorsBtn = document.getElementsByClassName('scissors');    
 
        
 
