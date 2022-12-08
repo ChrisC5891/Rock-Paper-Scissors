@@ -15,10 +15,10 @@ function getComputerChoice(){
     }
    
 }
-getComputerChoice()
 
-let playerScore= '';
-let computerScore= '';
+
+let playerScore= 0;
+let computerScore= 0;
 let roundWinner = ''
 
 
@@ -43,15 +43,16 @@ let roundWinner = ''
     //   else return computerScore = ++computerScore  
     //}
 
-            let player;
-            let computer = getComputerChoice();
-            let result; 
+            //let player;
+            //let computer = getComputerChoice();
+            //let result; 
             
+   // console.log(playRound(player, computer));
 
     function playRound(){
         
         if(player === computer){
-                    return (`You draw with ${player} & ${computer}`)
+                    return (`Draw! ${player} & ${computer}`)
                 }
                 
     if(
@@ -63,9 +64,9 @@ let roundWinner = ''
         
         playerScore ++
         roundWinner = 'Player'
-        playerResult.textContent = `You're score: ${playerScore}`;
+        playerResult.textContent = `Your score: ${playerScore}`;
         console.log(`You're score is ${playerScore}`)
-        return (`you win! ${player} beats ${computer}`)
+        return (`You win! ${player} beats ${computer}`)
     }   
     else if (
         (player === 'rock'     && computer === 'paper')||
@@ -80,10 +81,10 @@ let roundWinner = ''
         return(` You lose! ${computer} beats ${player}`)
         
     }
+    
     }
     
-    
-    
+   
     const gameResults = document.querySelectorAll('.gameResults');
     const playerResult = document.querySelector('#playerResult');
     const computerResult = document.querySelector('#computerResult');
@@ -91,13 +92,20 @@ let roundWinner = ''
     const resultTally = document.querySelector('#resultTally')
 
    
-            
-            
-            playerResult.textContent = ("Your score = " + playerScore);
-            computerResult.textContent = ("Computer's score = " + computerScore);
-            
-
-       
+            function game(){
+                
+            for(let i = 0; i < 5; i++){
+                
+            playerResult.textContent = ("Your score: " + playerScore);
+            computerResult.textContent = ("Computer's score: " + computerScore);
+            if(playerScore === 5 && playerScore > computerScore){
+                finalResult.textContent = ('You win the game!')
+            }
+            else {computerScore === 5 && playerScore < computerScore
+                 finalResult.textContent = ('Computer wins the game!')
+        }
+    }
+}
          
     
                     //playerResult.textContent = `Player Score: ${playerScore}`;
@@ -115,7 +123,7 @@ const choiceButton = document.querySelectorAll('.choiceButton')
                     choiceButton.forEach(button =>{
                         button.addEventListener('click', ()=>{
                             player = button.textContent;
-                            getComputerChoice(); 
+                            computer = getComputerChoice(); 
                             playerText.textContent = `Player: ${player}`;
                             computerText.textContent = `Computer: ${computer}`;
                             resultText.textContent = playRound();
@@ -131,8 +139,8 @@ const choiceButton = document.querySelectorAll('.choiceButton')
     //        if (playerScore === 5 || computerScore === 5)
     //                  alert('GAME OVER')
     //    //console.log(playRound(player, computer));
-    //    console.log("Your score = " + playerScore);
-    //    console.log("Computer's score = " + computerScore)    
+    //    //console.log("Your score = " + playerScore);
+    //    //console.log("Computer's score = " + computerScore)    
     //        
     //        return game()
     //    }
@@ -168,14 +176,14 @@ const choiceButton = document.querySelectorAll('.choiceButton')
         
 //////////////   Five Rounds  /////////////////////
 
-        for(let i =0; i < 5; i++){
+        //for(let i =0; i < 5; i++){
 //playerSelection = prompt ('choose rock, paper or scissors');  ///////    input tied to this prompt   //////////
 //playerSelection = playerSelection.toLowerCase();
 //const computerChoice = getComputerChoice();
 //console.log(playRound(player, computer));
 //console.log("Your score = " + playerScore);
 //console.log("Computer's score = " + computerScore)
-}
+//}
 
             
           
