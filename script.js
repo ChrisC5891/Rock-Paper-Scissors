@@ -17,62 +17,133 @@ function getComputerChoice(){
 }
 getComputerChoice()
 
-let playerScore = 0;
-let computerScore = 0;
+let playerScore= '';
+let computerScore= '';
 let roundWinner = ''
 
 
-    
+    //function playRound(){
+    //    
+    //   if(player === computer){
+    //    
+    //    return "You Draw!"
+    //   }
+    //   else if(player === "rock"){
+    //    playerScore = ++playerScore 
+    //    return(computer=== "scissors")? "You win!" : "You lose!"
+    //   }
+    //   else if(player === "paper"){
+    //    playerScore = ++playerScore 
+    //    return(computer === "rock") ? "You win!" : "You lose!"
+    //   }
+    //   else if(player === "scissors"){
+    //    playerScore = ++playerScore 
+    //    return(computer === "paper") ? "You win!" :  "You lose!"
+    //   }
+    //   else return computerScore = ++computerScore  
+    //}
+
+            let player;
+            let computer = getComputerChoice();
+            let result; 
+            
+
     function playRound(){
         
-       if(player === computer){
+        if(player === computer){
+                    return (`You draw with ${player} & ${computer}`)
+                }
+                
+    if(
+        (player === 'rock'     && computer ===  'scissors')||
+        (player === 'paper'    && computer === 'rock')||
+        (player === 'scissors' && computer === 'paper')
+    ){  
         
-        return "You Draw!"
-       }
-       else if(player === "rock"){
+        
         playerScore ++
-        return(computer=== "scissors")? "You win!" : "You lose!"
-       }
-       else if(player === "paper"){
-        playerScore ++
-        return(computer === "rock") ? "You Win!" : "You lose!"
-       }
-       else if(player === "scissors"){
-        playerScore ++
-        return(computer === "paper") ? "You win!" :  "You lose!"
-       }
-       else computerScore ++ 
-       console.log(playerScore)
-       console.log(computerScore)
+        roundWinner = 'Player'
+        playerResult.textContent = `You're score: ${playerScore}`;
+        console.log(`You're score is ${playerScore}`)
+        return (`you win! ${player} beats ${computer}`)
+    }   
+    else if (
+        (player === 'rock'     && computer === 'paper')||
+        (player === 'paper'    && computer === 'scissors')||
+        (player === 'scissors' && computer === 'rock')
+    ){
+        
+        computerScore ++
+        roundWinner = 'Computer'
+        computerResult.textContent = `Computers score: ${computerScore}`;
+        console.log(`Computers score: ${computerScore}`)
+        return(` You lose! ${computer} beats ${player}`)
+        
     }
+    }
+    
+    
+    
+    const gameResults = document.querySelectorAll('.gameResults');
+    const playerResult = document.querySelector('#playerResult');
+    const computerResult = document.querySelector('#computerResult');
+    const finalResult = document.querySelector('#finalResult');
+    const resultTally = document.querySelector('#resultTally')
+
    
+            
+            
+            playerResult.textContent = ("Your score = " + playerScore);
+            computerResult.textContent = ("Computer's score = " + computerScore);
+            
 
+       
+         
+    
+                    //playerResult.textContent = `Player Score: ${playerScore}`;
+                    //computerResult.textContent = `Computer Score: ${computerScore}`;
+                    //finalResult.textContent;
+       
+                    
+const playerText = document.querySelector('#playerText')
+const computerText = document.querySelector('#computerText')
+const resultText = document.querySelector('#resultText')
+const choiceButton = document.querySelectorAll('.choiceButton')
+                    
+                    
+                  
+                    choiceButton.forEach(button =>{
+                        button.addEventListener('click', ()=>{
+                            player = button.textContent;
+                            getComputerChoice(); 
+                            playerText.textContent = `Player: ${player}`;
+                            computerText.textContent = `Computer: ${computer}`;
+                            resultText.textContent = playRound();
+        
+                            
+                        })
+                    })
 
+    
+    //function game(){
+    //    for(let i = 0; i < 5; i++){
+    //        //const computer = getComputerChoice();
+    //        if (playerScore === 5 || computerScore === 5)
+    //                  alert('GAME OVER')
+    //    //console.log(playRound(player, computer));
+    //    console.log("Your score = " + playerScore);
+    //    console.log("Computer's score = " + computerScore)    
+    //        
+    //        return game()
+    //    }
+    //
+    //}
+    
     const scorePlayer = document.querySelector(".playerScore");
 
 
 
-    //if(
-    //    (player === 'rock'     && computer ===  'scissors')||
-    //    (player === 'paper'    && computer === 'rock')||
-    //    (player === 'scissors' && computer === 'paper')
-    //){  
-    //    
-    //    alert(`you win! ${player} beats ${computer}`)
-    //    playerScore ++
-    //    roundWinner = 'Player'
-    //    console.log(`You're score is ${playerScore}`)
-    //}   
-    //else if (
-    //    (player === 'rock'     && computer === 'paper')||
-    //    (player === 'paper'    && computer === 'scissors')||
-    //    (player === 'scissors' && computer === 'rock')
-    //){
-    //    alert (` You lose ${computer} beats ${player}`)
-    //    computerScore ++
-    //    roundWinner = 'Computer'
-    //    console.log(`Computers score: ${computerScore}`)
-    //}
+    
     
 
     //if (player !== 'rock' && 
@@ -82,63 +153,37 @@ let roundWinner = ''
 //
     //}
 
-//    if(player === computer){
-//        alert (`You draw`)
-//    }
-//    if (playerScore === 5 || computerScore === 5)
-//           alert('GAME OVER')
-//    
-//}  
+        //if(playerScore > computerScore){
+        //    result = (`You have defeated the machines! ${playerScore} - ${computerScore}`)
+        //};
+        //if(computerScore > playerScore){
+        //    result.textContent = (`You lose! The machines have taken over! ${computerScore} - ${playerScore}`)
+        //};
     
             
             ////// connecting DOM and adding event listener /////////////////
             
-            const playerText = document.querySelector('#playerText')
-            const computerText = document.querySelector('#computerText')
-            const resultText = document.querySelector('#resultText')
-            const choiceButton = document.querySelectorAll('.choiceButton')
-            let player;
-            let computer = getComputerChoice();
-            let result ; 
-
-
-            choiceButton.forEach(button =>{
-                button.addEventListener('click', ()=>{
-                    player = button.textContent;
-                    getComputerChoice(); 
-                    playerText.textContent = `Player: ${player}`;
-                    computerText.textContent = `Computer: ${computer}`;
-                    resultText.textContent = playRound();
-
-                    
-                })
-            })
-       
+          
+        
         
 //////////////   Five Rounds  /////////////////////
 
-        //for(let i =0; i < 5; i++){
+        for(let i =0; i < 5; i++){
 //playerSelection = prompt ('choose rock, paper or scissors');  ///////    input tied to this prompt   //////////
 //playerSelection = playerSelection.toLowerCase();
 //const computerChoice = getComputerChoice();
-console.log(playRound(player, computer));
+//console.log(playRound(player, computer));
 //console.log("Your score = " + playerScore);
 //console.log("Computer's score = " + computerScore)
-//}
+}
 
             
           
-        //if(playerScore > computerScore){
-        //    alert(`You have defeated the machines! ${playerScore} - ${computerScore}`)
-        //};
-        //    if(computerScore > playerScore){
-        //alert(`You lose! The machines have taken over! ${computerScore} - ${playerScore}`)
-        //    };
+        
             
         
 
-        const body = document.querySelector('body')    
-        const container = document.getElementsByClassName('container');   
+          
 
             
     ///////////////////////   UI    ////////////////////////////////////////////////
