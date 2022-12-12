@@ -100,7 +100,7 @@ let roundWinner = ''
 
     function game(){
         
-            for(let i = 0; i < 5; i++){
+            
         //playerResult.textContent = ("Your score: " + playerScore);
         //computerResult.textContent = ("Computer's score: " + computerScore);
         if(playerScore >= 5 && playerScore > computerScore){
@@ -112,7 +112,7 @@ let roundWinner = ''
              alert('Computer wins the game!')
         }
     //}
-    }
+    
     }
 
     const gameResults = document.querySelectorAll('.gameResults');
