@@ -50,6 +50,7 @@ let roundWinner = ''
    // console.log(playRound(player, computer));
 
     function playRound(){
+        game()
         
         if(player === computer){
                     return (`Draw! ${player} & ${computer}`)
@@ -65,7 +66,7 @@ let roundWinner = ''
         playerScore ++
         roundWinner = 'Player'
         playerResult.textContent = `Your score: ${playerScore}`;
-        console.log(`You're score is ${playerScore}`)
+        console.log(`You're score: ${playerScore}`)
         return (`You win! ${player} beats ${computer}`)
     }   
     else if (
@@ -83,29 +84,46 @@ let roundWinner = ''
     }
     
     }
-    
-   
+
+
+    //if(playerScore < 5 || computerScore < 5){
+    //    roundWinner === 0
+    //}
+    //if(playerScore >= 5 && playerScore > computerScore){
+    //    roundWinner === 1
+    //    console.log('You win')
+    //}
+    //else if(computerScore >= 5 && computerScore > playerScore){
+    //    roundWinner === 1
+    //    console.log('you lose')
+    //}
+
+    function game(){
+        
+            for(let i = 0; i < 5; i++){
+        //playerResult.textContent = ("Your score: " + playerScore);
+        //computerResult.textContent = ("Computer's score: " + computerScore);
+        if(playerScore >= 5 && playerScore > computerScore){
+            finalResult.textContent = ('You win the game!');
+            alert('You win the game!')
+        }
+        else if(computerScore >= 5 && computerScore > playerScore){
+             finalResult.textContent = ('Computer wins the game!');
+             alert('Computer wins the game!')
+        }
+    //}
+    }
+    }
+
     const gameResults = document.querySelectorAll('.gameResults');
     const playerResult = document.querySelector('#playerResult');
     const computerResult = document.querySelector('#computerResult');
     const finalResult = document.querySelector('#finalResult');
     const resultTally = document.querySelector('#resultTally')
 
-   
-            function game(){
-                
-            for(let i = 0; i < 5; i++){
-                
-            playerResult.textContent = ("Your score: " + playerScore);
-            computerResult.textContent = ("Computer's score: " + computerScore);
-            if(playerScore === 5 && playerScore > computerScore){
-                finalResult.textContent = ('You win the game!')
-            }
-            else {computerScore === 5 && playerScore < computerScore
-                 finalResult.textContent = ('Computer wins the game!')
-        }
-    }
-}
+    
+    
+          
          
     
                     //playerResult.textContent = `Player Score: ${playerScore}`;
@@ -127,6 +145,7 @@ const choiceButton = document.querySelectorAll('.choiceButton')
                             playerText.textContent = `Player: ${player}`;
                             computerText.textContent = `Computer: ${computer}`;
                             resultText.textContent = playRound();
+                             
         
                             
                         })
