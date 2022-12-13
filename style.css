@@ -24,12 +24,14 @@ h2{
     color: blanchedalmond;
     font-size: 30px;
     text-shadow:5px 5px rgb(27, 27, 27);
+    
 }
 
 
 .container{
     display: flex;
     justify-content: center;
+    
 
 }
 
@@ -47,15 +49,25 @@ h2{
 .gameText{
     display: flex;
     justify-content: center;
+    font-family:Cambria, Cochin, Georgia, Times,  serif;
+    font-style: oblique;
     
 }
 
-#resultTally{
 
-    display:flex;
+#playerResult{
+    display: flex;
     justify-content: center;
-}
-
-.gameResults{
     margin: 10px;
+    margin-right: 50px;
+}
+#computerResult{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    margin-right: 50px;
+}
+#finalResult{
+    display: flex;
+    justify-content: center;
 }
